@@ -65,7 +65,7 @@ ca_uoguelph_ccs_sidebarHandlerObject.prototype.init = function ()
         style: DwtSash.HORIZONTAL_STYLE
     });
 
-    this.dwtSash.setLocation(-5, "50%");
+    this.dwtSash.setLocation(-5, "20%");
 
     this.dwtSash.registerCallback(function(delta) {
         var sidebar = document.getElementById("skin_container_sidebar_ad");
