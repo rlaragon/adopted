@@ -23,10 +23,10 @@ function ca_uoguelph_ccs_sidebarHandlerObject () {}
 ca_uoguelph_ccs_sidebarHandlerObject.prototype = new ZmZimletBase ();
 ca_uoguelph_ccs_sidebarHandlerObject.prototype.constructor = ca_uoguelph_ccs_sidebarHandlerObject;
 
-ca_uoguelph_ccs_sidebarHandlerObject.prototype.dateFormat = new AjxDateFormat (I18nMsg.formatDateShort);
-ca_uoguelph_ccs_sidebarHandlerObject.prototype.timeFormat = new AjxDateFormat (I18nMsg.formatTimeShort);
+ca_uoguelph_ccs_sidebarHandlerObject.prototype.dateFormat = new AjxDateFormat ("M/d");
+ca_uoguelph_ccs_sidebarHandlerObject.prototype.timeFormat = new AjxDateFormat ("HH:mm");
 
-ca_uoguelph_ccs_sidebarHandlerObject.HELP_URL = 'helpurl';
+ca_uoguelph_ccs_sidebarHandlerObject.HELP_URL = 'Helpurl';
 
 ca_uoguelph_ccs_sidebarHandlerObject.HIDE_PATTERN = /^~/;
 
@@ -105,7 +105,7 @@ ca_uoguelph_ccs_sidebarHandlerObject.prototype.init = function ()
     this.dwtSubRoot.getHtmlElement().style.overflowY = 'auto';
     this.dwtSubRoot.getHtmlElement().style.overflowX = 'hidden';
 
-    this.dwtLabelTop = new DwtButton
+    this.dwtLabelTop = new AmAppButton
     ({
         parent: this.dwtSubRoot,
         id: 'ca_uoguelph_ccs_sidebar_tree_top'
@@ -161,7 +161,7 @@ ca_uoguelph_ccs_sidebarHandlerObject.prototype.init = function ()
             dti.setData("show_pref", "show_"+section.toLowerCase());
             dti.setData("show_pref_default", "false");
             dti.setExpanded(this.getShowPref(dti));
-            this["dwt"+section]=dti;
+            /*this["dwt"+section]=dti;*/
         }
     }
 
@@ -634,14 +634,15 @@ ca_uoguelph_ccs_sidebarHandlerObject.prototype.showTasks = function (items, resu
             singleClickAction: true
         });
         leaf.setToolTipContent(text);
-        leaf.addListener(
+        /*leaf.addListener(
             DwtEvent.ONMOUSEUP,
             new AjxListener (
                 this,
                 this.showTaskItem,
                 [ item ]
             )
-        );
+        );*/
+        
     }
 
     parent.setExpanded(this.getShowPref(parent));
